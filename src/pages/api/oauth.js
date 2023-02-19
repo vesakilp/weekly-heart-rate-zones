@@ -8,8 +8,8 @@ export default async function handler(req, res) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      client_id: 100747,
-      client_secret: "c61c6b5cbbb396156179d0024525e186f792860d",
+      client_id: process.env.client_id,
+      client_secret: process.env.client_secret,
       code: userCode,
       grant_type: "authorization_code"
     })

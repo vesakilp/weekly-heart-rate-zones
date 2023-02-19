@@ -146,12 +146,10 @@ export default function Home() {
       _thisWeekZonePercentages[4] = Math.round(thisWeekZone5Total / thisWeekZonesTotal * 100)
       console.log("_thisWeekZonePercentages", _thisWeekZonePercentages)
 
-      //setLastWeekZonePercentages(_lastWeekZonePercentages)
+      setLastWeekZonePercentages(_lastWeekZonePercentages)
       setThisWeekZonePercentages(_thisWeekZonePercentages)
     }
   };
-
-
 
   const [lastWeekZonePercentages, setLastWeekZonePercentages] = useState([0,0,0,0,0]);
   const [thisWeekZonePercentages, setThisWeekZonePercentages] = useState([0,0,0,0,0]);
@@ -175,14 +173,14 @@ export default function Home() {
         <div className={styles.description}>
           {
             lastWeekZonePercentages.map((zone, i) => {
-              return <p>Zone{i+1}: {zone} %</p>
+              return <p key={"lastWeekZone" + i+1}>Zone{i+1}: {zone} %</p>
             })
           }
         </div>
         <div className={styles.description}>
           {
             thisWeekZonePercentages.map((zone, i) => {
-              return <p>Zone{i+1}: {zone} %</p>
+              return <p key={"thisWeekZone" + i+1}>Zone{i+1}: {zone} %</p>
             })
           }
         </div>
